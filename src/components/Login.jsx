@@ -22,6 +22,7 @@ const Login = () => {
     return navigate("/");
   }catch(err){
     console.log(err); 
+    alert("Incorrect email or password !!");  
   }
   };
 
