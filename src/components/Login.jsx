@@ -8,6 +8,7 @@ import { BASE_URL } from "../utils/constant";
 const Login = () => {
   const [emailId, setEmailId] = useState("Sonal@gmail.com");
   const [password, setPassword] = useState("Sonal@123");
+  const [err, setError] = useState("");
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -21,8 +22,9 @@ const Login = () => {
     dispatch(addUser(res.data));
     return navigate("/");
   }catch(err){
-    console.log(err); 
-    alert("Incorrect email or password !!");  
+    setError(err?.response?.data || "Something went wrong !!");
+    // console.log(err); 
+    // alert("Incorrect email or password !!");  
   }
   };
 
@@ -61,13 +63,14 @@ const Login = () => {
 
           {/* Actions */}
           <div className="flex items-center justify-between text-sm pt-2">
-            <label className="flex items-center gap-2 cursor-pointer">
+            {/* <label className="flex items-center gap-2 cursor-pointer">
               <input type="checkbox" className="checkbox checkbox-sm" />
               Remember me
-            </label>
+            </label> */}
             <a href="#" className="text-blue-400 hover:underline">
               Forgot password?
             </a>
+            <p className="text-red-500 text-center">{err}</p>
           </div>
 
           {/* Login Button */}
