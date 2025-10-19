@@ -44,7 +44,8 @@ const Login = () => {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 p-4">
+    // <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 p-4">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-800 p-4 pb-20">
       <div className="bg-gray-950 w-full max-w-md text-white shadow-2xl rounded-2xl p-8">
         {/* Header */}
         <h2 className="text-3xl font-bold text-center mb-2">
